@@ -278,10 +278,10 @@ class UniformCivilNumber {
             }
         }
 
-        val region = if (firstNum[inputRegion] != null) {
+        val region: Int? = if (firstNum[inputRegion] != null) {
             inputRegion
         } else {
-            false
+            null
         }
 
         var iter: Int = 0
@@ -303,10 +303,10 @@ class UniformCivilNumber {
             2000 -> gmon += 40
         }
         var gregion = 0
-        if (region == false) {
+        if (region == null) {
             gregion = (0..999).random()
         } else {
-            gregion = (0..firstNum[inputRegion]!!).random()
+            gregion = (region..firstNum[region]!!).random()
         }
         /* Make it odd */
         if (sex == 1 && (gregion % 2 != 0))

@@ -42,7 +42,7 @@ class UniformCivilNumberTest : TestCase() {
 
     fun testGenerateEgn() {
         val ucn = UniformCivilNumber()
-        val info = ucn.generate(2,2,1983, 1, inputRegion = 904)
+        val info = ucn.generate(2,2,1983, 1, inputRegion = 0)
         assertNotNull(info)
     }
 }
