@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         var out = ""
         val numberOfUcns = binding.numberOfUcns.text.toString().toIntOrNull() ?: 3
         val day = binding.editMontDay.text.toString().toIntOrNull() ?: 0
-        val month = binding.editMontDay.text.toString().toIntOrNull() ?: 0
+        val month = binding.editMontNumber.text.toString().toIntOrNull() ?: 0
         val year = binding.editYearNumber.text.toString().toIntOrNull() ?: 0
         val sex = when (binding.genderOptions.checkedRadioButtonId) {
             R.id.option_female -> 2
