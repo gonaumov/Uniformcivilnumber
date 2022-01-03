@@ -92,39 +92,7 @@ class UniformCivilNumber {
         904 to 925,
         926 to 999
     )
-    val lastNum = mapOf(
-        43 to 0,
-        93 to 44,
-        139 to 94,
-        169 to 140,
-        183 to 170,
-        217 to 184,
-        233 to 218,
-        281 to 234,
-        301 to 282,
-        319 to 302,
-        341 to 320,
-        377 to 342,
-        395 to 378,
-        435 to 396,
-        501 to 436,
-        527 to 502,
-        555 to 528,
-        575 to 556,
-        601 to 576,
-        623 to 602,
-        721 to 624,
-        751 to 722,
-        789 to 752,
-        821 to 790,
-        843 to 822,
-        871 to 844,
-        903 to 872,
-        925 to 904,
-        999 to 926
-    )
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun valid(ucn: String): Boolean {
         if (ucn.length != 10) {
             return false
@@ -153,7 +121,6 @@ class UniformCivilNumber {
         return false
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun checkdate(month: Int, day: Int, year: Int): Boolean {
         if (!(1..32767).contains(year))
             return false
@@ -165,7 +132,6 @@ class UniformCivilNumber {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun parse(ucn: String): Map<String, String>? {
         if (!valid(ucn))
             return null
@@ -211,7 +177,6 @@ class UniformCivilNumber {
         return ret
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun info(ucn: String): String {
         if (!valid(ucn)) {
             return " $ucn невалиден ЕГН"
