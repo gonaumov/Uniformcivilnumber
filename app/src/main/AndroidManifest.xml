@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniformCivilNumber">
         <activity
+            android:name=".GenerateActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ParseActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

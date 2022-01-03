@@ -1,6 +1,8 @@
 package com.example.uniformcivilnumber
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +22,12 @@ class MainActivity : AppCompatActivity() {
         }
         binding.buttonGenerateUcns.setOnClickListener {
             generateUcns()
+        }
+        binding.gotoGeneratePage.setOnClickListener {
+            goToToGeneratePage(it)
+        }
+        binding.gotoParsePage.setOnClickListener {
+            goToToParsePage(it)
         }
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, unc.regions.keys.toList())
         binding.selectRegion.adapter = adapter
@@ -50,4 +58,15 @@ class MainActivity : AppCompatActivity() {
         }
         binding.ucnInfoText.text = out
     }
+
+    fun goToToParsePage(view: View) {
+        val intent = Intent(this, ParseActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun goToToGeneratePage(view: View) {
+        val intent = Intent(this, GenerateActivity::class.java)
+        startActivity(intent)
+    }
+
 }
