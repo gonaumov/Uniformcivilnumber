@@ -139,12 +139,14 @@ class UniformCivilNumber {
         ret.set("year", ucn.substring(0, 2))
         ret.set("month", ucn.substring(2, 4))
         ret.set("day", ucn.substring(4, 6))
-        val month = ret.get("month")?.toInt() ?: 0
+        var month = ret.get("month")?.toInt() ?: 0
         val year = ret.get("year")?.toInt() ?: 0
         if (month > 40) {
-            ret.set("month", (month - 40).toString())
+            month -= 40
+            ret.set("month", month.toString())
             ret.set("year", (year + 2000).toString())
         } else if (month > 20) {
+            month -= 20
             ret.set("month", (month - 20).toString())
             ret.set("year", (year + 1800).toString())
         } else {

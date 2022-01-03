@@ -26,7 +26,8 @@ class UniformCivilNumberTest : TestCase() {
 
     fun testParseEgnIsValid() {
         val ucn = UniformCivilNumber()
-        assertNotNull(ucn.parse("2501254491"))
+        val parse = ucn.parse("2501254491")
+        assertNotNull(parse)
     }
 
     fun testParseEgnIsInValid() {
