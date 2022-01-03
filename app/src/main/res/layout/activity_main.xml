@@ -11,33 +11,126 @@
         android:id="@+id/ucnNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="number"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="106dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Show info for UCN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ucnNumber"
-        app:layout_constraintVertical_bias="0.186" />
+        app:layout_constraintVertical_bias="0.057" />
 
     <TextView
         android:id="@+id/ucnInfoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/ucnNumber"
+        android:layout_marginTop="28dp"
+        tools:text="UCN info"
+        app:layout_constraintBottom_toTopOf="@+id/selectRegion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035" />
+        app:layout_constraintTop_toBottomOf="@+id/button_info"
+        app:layout_constraintVertical_bias="0.142" />
+    <RadioGroup
+        android:id="@+id/gender_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/option_random_gender"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectRegion">
+
+        <RadioButton
+            android:id="@+id/option_random_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Случаен" />
+
+        <RadioButton
+            android:id="@+id/option_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мъжки" />
+
+        <RadioButton
+            android:id="@+id/option_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Женски" />
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/selectRegion"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ucnInfoText"
+        tools:text="Select region" />
+
+    <EditText
+        android:id="@+id/edit_mont_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender_options" />
+
+    <EditText
+        android:id="@+id/edit_mont_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_mont_day" />
+
+    <EditText
+        android:id="@+id/edit_year_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_mont_number" />
+
+    <EditText
+        android:id="@+id/number_of_ucns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_year_number" />
+
+    <Button
+        android:id="@+id/button_generate_ucns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generate ucns"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number_of_ucns" />
 </androidx.constraintlayout.widget.ConstraintLayout>
