@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ParseActivity">
 
     <Button
@@ -12,21 +13,40 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Back to home"
+        app:layout_constraintBottom_toTopOf="@+id/ucnNumberHolder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/ucnNumber"
+    <ImageView
+        android:id="@+id/icon_ucn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:ems="10"
-        android:inputType="number"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/ucnNumberHolder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ucnNumberHolder"
+        app:srcCompat="@drawable/ic_ucn" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ucnNumberHolder"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:hint="Enter UCN here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ucnNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    
     <Button
         android:id="@+id/button_info"
         android:layout_width="wrap_content"
@@ -34,18 +54,8 @@
         android:layout_marginTop="28dp"
         android:text="Show info for UCN"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ucnNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/ucnNumberHolder" />
 
-    <TextView
-        android:id="@+id/ucnInfoText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:paddingLeft="22dp"
-        android:paddingRight="22dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_info"
-        tools:text="UCN info" />
 </androidx.constraintlayout.widget.ConstraintLayout>

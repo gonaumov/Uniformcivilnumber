@@ -1,9 +1,12 @@
 package com.example.uniformcivilnumber
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +30,18 @@ class GenerateActivity : AppCompatActivity() {
         }
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, unc.regions.keys.toList())
         binding.selectRegion.adapter = adapter
+        binding.editMontDay.setOnKeyListener { v, keyCode, _ ->
+            handleKeyEvent(v, keyCode)
+        }
+        binding.editMontNumber.setOnKeyListener { v, keyCode, _ ->
+            handleKeyEvent(v, keyCode)
+        }
+        binding.editYearNumber.setOnKeyListener { v, keyCode, _ ->
+            handleKeyEvent(v, keyCode)
+        }
+        binding.numberOfUcns.setOnKeyListener { v, keyCode, _ ->
+            handleKeyEvent(v, keyCode)
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -56,5 +71,16 @@ class GenerateActivity : AppCompatActivity() {
     fun backButtonTap(view: View) {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+    }
+
+    private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
+            // Hide the keyboard
+            val inputMethodManager =
+                getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+            return true
+        }
+        return false
     }
 }
