@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".GenerateActivity">
     <Button
         android:id="@+id/button"
@@ -27,7 +28,7 @@
 
     <Spinner
         android:id="@+id/selectRegion"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="1dp"
@@ -76,89 +77,107 @@
             android:text="Female" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/dayMonthTitle"
+    <ImageView
+        android:id="@+id/icon_day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:text="Day of month"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/edit_mont_day_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edit_mont_day_container"
+        app:srcCompat="@drawable/ic_day" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_mont_day_container"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:hint="Day of month"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gender_options" />
+        app:layout_constraintTop_toBottomOf="@+id/gender_options">
 
-    <EditText
-        android:id="@+id/edit_mont_day"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_mont_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/icon_month"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/monthTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dayMonthTitle" />
+        app:layout_constraintTop_toTopOf="@id/monthTitle"
+        app:srcCompat="@drawable/ic_month" />
 
-    <TextView
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/monthTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:text="Month"
+        android:layout_marginStart="16dp"
+        android:hint="Month"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_mont_day" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_mont_day_container">
 
-    <EditText
-        android:id="@+id/edit_mont_number"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_mont_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/icon_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/textYearHolder"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/monthTitle" />
+        app:layout_constraintTop_toTopOf="@id/textYearHolder"
+        app:srcCompat="@drawable/ic_year" />
 
-    <TextView
-        android:id="@+id/textYear"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textYearHolder"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:text="Year"
+        android:layout_marginStart="16dp"
+        android:hint="Year"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_mont_number" />
+        app:layout_constraintTop_toBottomOf="@+id/monthTitle">
 
-    <EditText
-        android:id="@+id/edit_year_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textYear" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_year_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
 
-    <TextView
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ucnNumbersTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:text="Number of generated ucn's"
+        android:layout_marginStart="16dp"
+        android:hint="Number of results"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_year_number" />
+        app:layout_constraintTop_toBottomOf="@+id/textYearHolder">
 
-    <EditText
-        android:id="@+id/number_of_ucns"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ucnNumbersTitle" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/number_of_ucns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/button_generate_ucns"
@@ -168,6 +187,6 @@
         android:text="Generate ucn's"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/number_of_ucns" />
+        app:layout_constraintTop_toBottomOf="@+id/ucnNumbersTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
