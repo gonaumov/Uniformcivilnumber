@@ -33,7 +33,6 @@ class GenerateActivity : AppCompatActivity() {
     private fun generateUcns() {
         val selectedRegion = unc.regions[binding.selectRegion.selectedItem]
         var regionId = unc.firstNum.filterValues { it == selectedRegion }.keys.first()
-        var out = ""
         val numberOfUcns = binding.numberOfUcns.text.toString().toIntOrNull() ?: 3
         val day = binding.editMontDay.text.toString().toIntOrNull() ?: 0
         val month = binding.editMontNumber.text.toString().toIntOrNull() ?: 0
@@ -43,7 +42,6 @@ class GenerateActivity : AppCompatActivity() {
             R.id.option_male -> 1
             else -> 0
         }
-
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra("mode", "generate")
         intent.putExtra("regionId", regionId)
@@ -52,7 +50,6 @@ class GenerateActivity : AppCompatActivity() {
         intent.putExtra("month", month)
         intent.putExtra("year", year)
         intent.putExtra("sex", sex)
-        intent.putExtra("sex", regionId)
         startActivity(intent)
     }
 
