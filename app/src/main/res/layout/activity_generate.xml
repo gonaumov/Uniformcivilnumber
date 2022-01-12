@@ -16,18 +16,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/ucnInfoText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:text="UCN info" />
-
-    <TextView
         android:id="@+id/regionSelectTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +23,7 @@
         android:text="Please choose region"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ucnInfoText" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Spinner
         android:id="@+id/selectRegion"

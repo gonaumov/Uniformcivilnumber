@@ -16,7 +16,10 @@ class ParseActivity : AppCompatActivity() {
         binding = ActivityParseBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.buttonInfo.setOnClickListener {
-            displayUcnInfo()
+            val intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("mode", "parse")
+            intent.putExtra("ucn", binding.ucnNumber.text.toString())
+            startActivity(intent)
         }
         binding.button.setOnClickListener {
             backButtonTap(it)

@@ -44,11 +44,16 @@ class GenerateActivity : AppCompatActivity() {
             else -> 0
         }
 
-        for (i in 0 until numberOfUcns) {
-            val res: String = unc?.generate(day, month, year, sex, regionId) ?: ""
-            out += unc.info(res) + "\n"
-        }
-        binding.ucnInfoText.text = out
+        val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra("mode", "generate")
+        intent.putExtra("regionId", regionId)
+        intent.putExtra("numberOfUcns", numberOfUcns)
+        intent.putExtra("day", day)
+        intent.putExtra("month", month)
+        intent.putExtra("year", year)
+        intent.putExtra("sex", sex)
+        intent.putExtra("sex", regionId)
+        startActivity(intent)
     }
 
     fun backButtonTap(view: View) {
