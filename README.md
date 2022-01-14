@@ -8,4 +8,4 @@ so  it works properly but I am not pretending it to be ideal. :)
 ## Screenshots
 
 | ![Start](screenshots/start.png) | ![Generate](screenshots/generate.png) | ![Generated](screenshots/generated.png) |
-| ![Parse](screenshots/parse.png) | ![ParseError](screenshots/parseerror.png) | |
+| ![Parse](screenshots/parse.png) | ![ParseError](screenshots/parseresult.png) | |
